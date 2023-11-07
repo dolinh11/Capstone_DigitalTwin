@@ -35,7 +35,6 @@ global {
 		map<road,float> weights_map <- road as_map (each:: (each.destruction_coeff * each.shape.perimeter));
 		the_graph <- as_edge_graph(road) with_weights weights_map;
 		
-		
 		list<building> residential_buildings <- building where (each.type="Residential");
 		list<building> industrial_buildings <- building  where (each.type="Industrial") ;
 		create people number: nb_people {
